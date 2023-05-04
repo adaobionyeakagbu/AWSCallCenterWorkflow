@@ -14,3 +14,8 @@ Step Functions is a serverless orchestration service that lets you easily coordi
 An IAM role that allows Step Functions to access Lambda was created by navigating to the IAM service on my AWS management console and clicking on Roles. To create a role, I selected AWS Service as the 'Trusted Entity Type', 'Step Functions' as the use case, named the role, and left all others as default.
 
 ### Step 2: Create a state machine and serverless workflow
+The workflow calls one AWS Lambda function to create a support case, invokes another function to assign the case to a support representative for resolution, and so on. It also passes data between Lambda functions to track the status of the support case as it's being worked on.
+
+First, I created a state machine by selecting 'Workflow by code'.
+The workflow will follow a sequence of tasks and choices that look like the image below:
+![2023-05-04 23 04 40](https://user-images.githubusercontent.com/66325142/236330598-1aa75361-f0e5-4443-b60b-af5998d1432f.png)
